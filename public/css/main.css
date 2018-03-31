@@ -8,8 +8,6 @@ body {
   font-family: 'Fira Sans', sans-serif;
 }
 
-
-
 #map {
   height: 500px;
   width: 75%;
@@ -17,4 +15,9 @@ body {
 
 .here-gray {
   background-color: var(--here-gray);
+}
+
+.first-section {
+  background-color: var(--here-aqua);
+  height: 15vh;
 }

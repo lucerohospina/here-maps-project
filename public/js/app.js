@@ -7,26 +7,26 @@ var platform = new H.service.Platform({
 var defaultLayers = platform.createDefaultLayers();
 
 // Instantiate (and display) a map object:
-var map = new H.Map(
-  document.getElementById('map'),
-  defaultLayers.normal.map,
-  {
-    zoom: 12,
-    center: { lat: 52.5, lng: 13.4 }
-  });
+// var map = new H.Map(
+//   document.getElementById('map'),
+//   defaultLayers.normal.map,
+//   {
+//     zoom: 12,
+//     center: { lat: 52.5, lng: 13.4 }
+//   });
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      console.log(position.coords.latitude, position.coords.longitude)
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      map.setCenter(pos);
-    });
-  }
+  // if (navigator.geolocation) {
+  //   navigator.geolocation.getCurrentPosition(function(position) {
+  //     console.log(position.coords.latitude, position.coords.longitude)
+  //     var pos = {
+  //       lat: position.coords.latitude,
+  //       lng: position.coords.longitude
+  //     };
+  //     map.setCenter(pos);
+  //   });
+  // }
 
-    const $form = $('#xhr-search-form');
+    const $form = $('#search-form');
     const $searchField = $('#search-keyword');
     const $responseContainer = $('#response-container');
     let searchForText;
