@@ -1,0 +1,20 @@
+:root {
+  --here-aqua: #48dad0;
+  --here-gray: #383c45;
+  --here-white: #ffffff;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+
+
+#map {
+  height: 500px;
+  width: 75%;
+}
+
+.here-gray {
+  background-color: var(--here-gray);
+}
