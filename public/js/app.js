@@ -5,6 +5,8 @@ window.addEventListener('load', function() {
   var finishingInput = document.getElementById('finishing-input');
   var latA;
   var lngA;
+  var latB;
+  var lngB;
   
   // Step 1: initialize communication with the platform
   var platform = new H.service.Platform({
@@ -41,8 +43,7 @@ window.addEventListener('load', function() {
         lng: position.coords.longitude
       };
       map.setCenter(pos);
-      var marker = new H.map.Marker({lat: position.coords.latitude,
-        lng: position.coords.longitude});
+      var marker = new H.map.Marker(pos);
       map.addObject(marker);
     });
   } 
@@ -82,47 +83,64 @@ window.addEventListener('load', function() {
   // getting route from point A to point B
   function getRoute(platform) {
     var searching1 = startInput.value;
-    console.log(searching1);
+    var searching2 = finishingInput.value;
+    console.log(`starting: ${searching1}`);
+    console.log(`finishing: ${searching2}`);
     var geocoder = platform.getGeocodingService(),
-    geocodingParameters = {
-      searchText: `${searching1}`,
-      jsonattributes : 1
-    };
+      geocodingParameters = {
+        searchText: `${searching2}`,
+        jsonattributes : 1
+      };
+
+    // var geocoder2 = platform.getGeocodingService(),
+    // geocodingParameters = {
+    //   searchText: `${searching2}`,
+    //   jsonattributes : 1
+    // };
 
     geocoder.geocode(
       geocodingParameters,
-      function(result){
-        var locations = result.response.view[0].result;
-        console.log(locations[0].location.displayPosition.latitude);
-        console.log(locations[0].location.displayPosition.longitude);
-        latA = locations[0].location.displayPosition.latitude;
-        lngA = locations[0].location.displayPosition.longitude;
-
-        var router = platform.getRoutingService(),
-        routeRequestParams = {
-          mode: 'fastest;car',
-          representation: 'display',
-          routeattributes: 'waypoints,summary,shape,legs',
-          maneuverattributes: 'direction,action',
-          waypoint0: `${latA},${lngA}`, // Brandenburg Gate
-          waypoint1: '-12.09812,-77.03566' // Friedrichstraße Railway Station
-        };
-  
-  
-      router.calculateRoute(
-        routeRequestParams,
-        onSuccess,
-        onError
-      );
+      function(result) {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            console.log(position.coords.latitude, position.coords.longitude);
+            console.log(result);
+            var locations = result.response.view[0].result;
+            console.log(locations[0].location.displayPosition.latitude);
+            console.log(locations[0].location.displayPosition.longitude);
+            latB = locations[0].location.displayPosition.latitude;
+            lngB = locations[0].location.displayPosition.longitude;
+    
+            var router = platform.getRoutingService(),
+              routeRequestParams = {
+                mode: 'fastest;car',
+                representation: 'display',
+                routeattributes: 'waypoints,summary,shape,legs',
+                maneuverattributes: 'direction,action',
+                waypoint0: `${position.coords.latitude},${position.coords.longitude}`, 
+                waypoint1: `${latB},${lngB}` 
+              };
+      
+      
+            router.calculateRoute(
+              routeRequestParams,
+              onSuccess,
+              onError
+            );
+           
+            // map.setCenter(pos);
+            // var marker = new H.map.Marker(pos);
+            // map.addObject(marker);
+          });
+        } 
+         
+        
       },
       function(error) {
         alert('Ooops!');
       }
-    );
-    
-    
-    
-  } 
+    ); // fin de geocode
+  } // fin de getRoute
   
   /**
   * This function will be called once the Routing REST API provides a response
