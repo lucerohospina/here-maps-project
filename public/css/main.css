@@ -8,10 +8,16 @@ body {
   font-family: 'Fira Sans', sans-serif;
 }
 
-#map {
+.map-styles {
   background: var(--here-gray);
-  height: 500px;
-  width: 100%;
+  height: 100vh;
+  width: 97vw;
+}
+
+#map-routing {
+  background: var(--here-gray);
+  height: 100vh;
+  width: 97vw;
 }
 
 .here-gray {
@@ -21,4 +27,24 @@ body {
 .first-section {
   background-color: var(--here-aqua);
   height: 15vh;
+}
+
+.position {
+  position: absolute;
+  top: 46%;
+  z-index: 1000;
+}
+
+.position2 {
+position: absolute;
+bottom: 24%;
+}
+
+.position3 {
+  position: absolute;
+  top: 35%;
+}
+
+.display-none {
+  display: none;
 }
