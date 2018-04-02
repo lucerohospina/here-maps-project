@@ -1,6 +1,7 @@
 :root {
   --here-aqua: #48dad0;
   --here-gray: #383c45;
+  --here-dark-gray: #0f1621;
   --here-white: #ffffff;
 }
 
@@ -8,20 +9,14 @@ body {
   font-family: 'Fira Sans', sans-serif;
 }
 
-.map-styles {
-  background: var(--here-gray);
-  height: 100vh;
-  width: 97vw;
-}
-
-#map-routing {
+#map {
   background: var(--here-gray);
   height: 100vh;
   width: 97vw;
 }
 
 .here-gray {
-  background-color: var(--here-gray);
+  background-color: var(--here-dark-gray);
 }
 
 .first-section {
@@ -47,4 +42,12 @@ bottom: 24%;
 
 .display-none {
   display: none;
+}
+
+.nav-link {
+  color: var(--here-aqua);
+}
+
+.nav-link:hover {
+  color: var(--here-white);
 }

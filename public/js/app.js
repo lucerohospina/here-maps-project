@@ -113,7 +113,7 @@ window.addEventListener('load', function() {
     
             var router = platform.getRoutingService(),
               routeRequestParams = {
-                mode: 'fastest;car',
+                mode: 'fastest;pedestrian',
                 representation: 'display',
                 routeattributes: 'waypoints,summary,shape,legs',
                 maneuverattributes: 'direction,action',
