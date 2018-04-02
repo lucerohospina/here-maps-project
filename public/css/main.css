@@ -6,6 +6,7 @@
 }
 
 body {
+  background-color: var(--here-gray);
   font-family: 'Fira Sans', sans-serif;
 }
 
@@ -50,4 +51,8 @@ bottom: 24%;
 
 .nav-link:hover {
   color: var(--here-white);
+}
+
+.footer {
+  font-size: 0.8em;
 }
