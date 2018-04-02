@@ -3,11 +3,43 @@ var startInput = document.getElementById('start-input');
 var finishingInput = document.getElementById('finishing-input');
 
 function geocode(platform) {
-  var searching = finishingInput.value;
-  console.log(searching);
+  var searching1 = startInput.value;
+  console.log(searching1);
   var geocoder = platform.getGeocodingService(),
     geocodingParameters = {
-      searchText: `${searching}`,
+      searchText: `${searching1}`,
+      jsonattributes : 1
+    };
+
+  geocoder.geocode(
+    geocodingParameters,
+    onSuccess,
+    onError
+  );
+}
+
+function geocode(platform) {
+  var searching1 = startInput.value;
+  console.log(searching1);
+  var geocoder = platform.getGeocodingService(),
+    geocodingParameters = {
+      searchText: `${searching1}`,
+      jsonattributes : 1
+    };
+
+  geocoder.geocode(
+    geocodingParameters,
+    onSuccess,
+    onError
+  );
+}
+
+function geocode2(platform) {
+  var searching2 = finishingInput.value;
+  console.log(searching2);
+  var geocoder = platform.getGeocodingService(),
+    geocodingParameters = {
+      searchText: `${searching2}`,
       jsonattributes : 1
     };
 
@@ -32,7 +64,7 @@ function onSuccess(result) {
   * A representitive styling can be found the full JS + HTML code of this example
   * in the functions below:
   */
-  addLocationsToMap(locations);
+  // addLocationsToMap(locations);
   // addLocationsToPanel(locations);
   // ... etc.
 }
@@ -86,18 +118,18 @@ var bubble;
  * @param  {H.geo.Point} position     The location on the map.
  * @param  {String} text              The contents of the infobubble.
  */
-function openBubble(position, text){
- if(!bubble){
-    bubble =  new H.ui.InfoBubble(
-      position,
-      {content: text});
-    ui.addBubble(bubble);
-  } else {
-    bubble.setPosition(position);
-    bubble.setContent(text);
-    bubble.open();
-  }
-}
+// function openBubble(position, text){
+//  if(!bubble){
+//     bubble =  new H.ui.InfoBubble(
+//       position,
+//       {content: text});
+//     ui.addBubble(bubble);
+//   } else {
+//     bubble.setPosition(position);
+//     bubble.setContent(text);
+//     bubble.open();
+//   }
+// }
 
 /**
  * Creates a series of list items for each location found, and adds it to the panel.
@@ -150,35 +182,42 @@ function openBubble(position, text){
  * @param {Object[]} locations An array of locations as received from the
  *                             H.service.GeocodingService
  */
-function addLocationsToMap(locations){
-  var group = new  H.map.Group(),
-    position,
-    i;
+// function addLocationsToMap(locations){
+//   var group = new  H.map.Group(),
+//     position,
+//     i;
 
-  // Add a marker for each location found
-  for (i = 0;  i < locations.length; i += 1) {
-    position = {
-      lat: locations[i].location.displayPosition.latitude,
-      lng: locations[i].location.displayPosition.longitude
-    };
-    marker = new H.map.Marker(position);
-    marker.label = locations[i].location.address.label;
-    group.addObject(marker);
-  }
+//   // Add a marker for each location found
+//   for (i = 0;  i < locations.length; i += 1) {
+//     position = {
+//       lat: locations[i].location.displayPosition.latitude,
+//       lng: locations[i].location.displayPosition.longitude
+//     };
+//     marker = new H.map.Marker(position);
+//     marker.label = locations[i].location.address.label;
+//     group.addObject(marker);
+//   }
 
-  group.addEventListener('tap', function (evt) {
-    map.setCenter(evt.target.getPosition());
-    openBubble(
-       evt.target.getPosition(), evt.target.label);
-  }, false);
+//   group.addEventListener('tap', function (evt) {
+//     map.setCenter(evt.target.getPosition());
+//     openBubble(
+//        evt.target.getPosition(), evt.target.label);
+//   }, false);
 
-  // Add the locations group to the map
-  map.addObject(group);
-  map.setCenter(group.getBounds().getCenter());
-}
+//   // Add the locations group to the map
+//   map.addObject(group);
+//   map.setCenter(group.getBounds().getCenter());
+// }
 
 // Now use the map as required...
 // geocode(platform);
-directionsBtn.addEventListener('click', function() {
+// directionsBtn.addEventListener('click', function() {
+//   geocode(platform);
+// });
+
+startInput.addEventListener('search', function() {
   geocode(platform);
+});
+finishingInput.addEventListener('search', function() {
+  geocode2(platform);
 });
