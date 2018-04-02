@@ -20,14 +20,9 @@ body {
   background-color: var(--here-dark-gray);
 }
 
-.first-section {
-  background-color: var(--here-aqua);
-  height: 15vh;
-}
-
 .position {
   position: absolute;
-  top: 46%;
+  top: 35%;
   z-index: 1000;
 }
 
@@ -38,21 +33,32 @@ bottom: 24%;
 
 .position3 {
   position: absolute;
-  top: 35%;
+  top: 25%;
 }
 
 .display-none {
   display: none;
 }
 
-.nav-link {
+header .collapse ul .nav-item .nav-link {
   color: var(--here-aqua);
 }
 
-.nav-link:hover {
+ul .nav-item .nav-link:hover {
   color: var(--here-white);
 }
 
 .footer {
   font-size: 0.8em;
 }
+
+/* clases para TABLET  */
+@media (min-width: 768px) {
+  
+}
+
+/* clases para DESKTOP */
+@media (min-width: 992px) {
+  
+}
+

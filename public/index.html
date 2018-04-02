@@ -18,34 +18,39 @@
 
   <header class="here-gray container-fluid">
     <div class="row">
-      <nav class="nav pt-3 col-md-6">
-        <figure class="figure">
-          <img class="img-fluid ml-5 pl-5" src="assets/images/logo2.png" alt="here-logo">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top here-gray">
+        <figure class="figure mr-md-3 mt-3">
+          <img class="img-fluid" src="assets/images/logo2.png" alt="here-logo">
         </figure>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto navbar-ul">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vision</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Partners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Your Routes</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-md-0 mr-md-3">
+              <h5 class="text-white">The future of map making is HERE</h5>
+          </form>
+        </div>
       </nav>
-      <ul class="nav justify-content-center col-md-6">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">About us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Vision</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Partners</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Your Routes</a>
-        </li>
-      </ul>
     </div>
   </header>
-  <section class="first-section d-flex align-items-center justify-content-center">
-    <h4>The future of map making is HERE</h4>
-  </section>
   <section class="container-fluid mb-5">
     <!-- MAPA -->
     <div class="row">
-      <div class="col-12">
+      <div class="col-sm-12">
         <div id="map">
         
         </div>
