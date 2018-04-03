@@ -132,9 +132,7 @@ window.addEventListener('load', function() {
             // var marker = new H.map.Marker(pos);
             // map.addObject(marker);
           });
-        } 
-         
-        
+        }
       },
       function(error) {
         alert('Ooops!');
@@ -348,25 +346,34 @@ window.addEventListener('load', function() {
   const responseContainer = document.getElementById('response-container');
   let searchForText;
 
-  // form.addEventListener('submit', function(event) {
-  //   event.preventDefault();
-  //   responseContainer.innerHTML = '';
-  //   searchForText = searchField.value;
-  //   console.log(searchForText);
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log(position.coords.latitude, position.coords.longitude);
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+      var currentLoc = lat+','+lng;
 
-  //   let url = `https://places.cit.api.here.com/places/v1/autosuggest?at=40.74917,-73.98529&q=${searchForText}&app_id=OGYLftP8d2ca44VEO7PF&app_code=xil_Gm8hAdrTOIHhwDc2rg`;
-
-  //   fetch(url)
-  //     .then(function(response) {
-  //       return response.json();
-  //     })
-  //     .then(function(data) {
-  //       console.log(data);
-  //     })
-  //     .catch(function(error) {
-  //       console.log('something went wrong');
-  //     });
-  // });
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        responseContainer.innerHTML = '';
+        searchForText = searchField.value;
+        console.log(searchForText);
+    
+        let url = `https://places.cit.api.here.com/places/v1/autosuggest?at=${currentLoc}&q=${searchForText}&app_id=OGYLftP8d2ca44VEO7PF&app_code=xil_Gm8hAdrTOIHhwDc2rg`;
+    
+        fetch(url)
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(data) {
+            console.log(data);
+          })
+          .catch(function(error) {
+            console.log('something went wrong');
+          });
+      });
+    });
+  } 
 });
 
 

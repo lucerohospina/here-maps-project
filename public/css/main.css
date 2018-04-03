@@ -6,13 +6,21 @@
 }
 
 body {
-  background-color: var(--here-gray);
+  /* background-color: var(--here-gray); */
   font-family: 'Fira Sans', sans-serif;
+}
+
+.first-section {
+  background-color: var(--here-gray);
+}
+
+.second-section {
+  background-color: var(--here-white);
 }
 
 #map {
   background: var(--here-gray);
-  height: 100vh;
+  height: 92vh;
   width: 97vw;
 }
 
@@ -22,7 +30,7 @@ body {
 
 .position {
   position: absolute;
-  top: 35%;
+  top: 30%;
   z-index: 1000;
 }
 
@@ -33,7 +41,7 @@ bottom: 24%;
 
 .position3 {
   position: absolute;
-  top: 25%;
+  top: 20%;
 }
 
 .display-none {
