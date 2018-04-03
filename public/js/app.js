@@ -357,6 +357,7 @@ window.addEventListener('load', function() {
         event.preventDefault();
         responseContainer.innerHTML = '';
         searchForText = searchField.value;
+        var output = '';
         console.log(searchForText);
     
         let url = `https://places.cit.api.here.com/places/v1/autosuggest?at=${currentLoc}&q=${searchForText}&app_id=OGYLftP8d2ca44VEO7PF&app_code=xil_Gm8hAdrTOIHhwDc2rg`;
@@ -367,6 +368,26 @@ window.addEventListener('load', function() {
           })
           .then(function(data) {
             console.log(data);
+            console.log(data.results);
+            data.results.forEach(function(item) {
+              console.log(item);
+              var name = item.title
+              var address = item.vicinity;
+              var distance = item.distance;
+              var href = item.href;
+              output += `
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">${name.toUpperCase()}</h5>
+                  <p class="card-text">${address}</p>
+                  <p class="card-text">${distance}</p>
+                  <a href=# class="btn btn-primary">Click</a>
+                </div>
+              </div>
+              `;
+              document.getElementById('response-container').innerHTML = output;
+            })
+            
           })
           .catch(function(error) {
             console.log('something went wrong');
