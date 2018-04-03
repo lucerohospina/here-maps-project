@@ -61,7 +61,7 @@
     <!-- <div class="col-12 col-sm-4 "> -->
       <div class="card col-6 col-sm-4 position3 ml-4">
         <div class="card-body">
-          <h5 class="card-title text-center">Let's trail together! <span class="ml-3"><i class="fas fa-street-view fa-lg"></i></span> </h5>
+          <h5 class="card-title text-center">Let's trail together! <span class="ml-3 d-none d-sm-inline"><i class="fas fa-street-view fa-lg"></i></span> </h5>
         </div>
       </div>
     <!-- </div> -->
@@ -99,9 +99,9 @@
     </div>
   </section>
   <!-- seccion de fetching de places -->
-  <section class="container-fluid second-section py-5">
-    <div class="row">
-      <div class="col-md-6">
+  <section class="container-fluid second-section py-5 bg-color">
+    <div class="row ">
+      <div class="col-12">
         <h5 class="text-center">Search for places near you</h5>
         <form class="form-inline d-flex justify-content-center" id="search-form">
           <div class="input-group">
@@ -111,11 +111,14 @@
             </div>
           </div>
         </form>
-        <div id="response-container">
-          
-        </div>
+      </div>
+      <div id="response-container" class="row p-5 cards-container">
+        
       </div>
     </div>
+    <!-- <div class="row d-flex justify-content-center">
+      <div id="icon-container"><i class="fas fa-map-marker-alt fa-10x"></i></div> 
+    </div> -->
   </section>
   <footer class="here-gray fixed-bottom pt-3 footer">
     <p class="text-center text-white">© 2018 HERE TECH</p>

@@ -24,24 +24,23 @@ body {
   width: 97vw;
 }
 
+.here-aqua {
+  color: var(--here-aqua);
+}
+
 .here-gray {
   background-color: var(--here-dark-gray);
 }
 
 .position {
   position: absolute;
-  top: 30%;
+  top: 38%;
   z-index: 1000;
-}
-
-.position2 {
-position: absolute;
-bottom: 24%;
 }
 
 .position3 {
   position: absolute;
-  top: 20%;
+  top: 25%;
 }
 
 .display-none {
@@ -60,9 +59,30 @@ ul .nav-item .nav-link:hover {
   font-size: 0.8em;
 }
 
+.card p {
+  color: var(--here-gray);
+}
+
+.bg-color {
+  background-color: var(--here-aqua);
+}
+
+.cards-container .card:first-child {
+  display: none;
+}
+
 /* clases para TABLET  */
 @media (min-width: 768px) {
+  .position {
+    position: absolute;
+    top: 30%;
+    z-index: 1000;
+  }
   
+  .position3 {
+    position: absolute;
+    top: 20%;
+  }
 }
 
 /* clases para DESKTOP */
