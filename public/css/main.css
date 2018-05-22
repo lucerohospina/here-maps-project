@@ -10,6 +10,10 @@ body {
   font-family: 'Fira Sans', sans-serif;
 }
 
+#logo {
+  width: 50%;
+}
+
 .first-section {
   background-color: var(--here-gray);
 }
@@ -21,7 +25,7 @@ body {
 #map {
   background: var(--here-gray);
   height: 92vh;
-  width: 97vw;
+  
 }
 
 .here-aqua {
@@ -82,6 +86,10 @@ ul .nav-item .nav-link:hover {
   .position3 {
     position: absolute;
     top: 20%;
+  }
+
+  #logo {
+    width: 70%;
   }
 }
 

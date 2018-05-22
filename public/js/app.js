@@ -376,7 +376,7 @@ window.addEventListener('load', function() {
               var distance = item.distance;
               var href = item.href;
               output += `
-              <div class="card col-12 col-sm-6 col-md-4">
+              <div class="card col-12">
                 <div class="card-body">
                   <h5 class="card-title">${name.toUpperCase()}</h5>
                   <p class="card-text"><strong class="here-aqua">Address:</strong> ${address}</p>

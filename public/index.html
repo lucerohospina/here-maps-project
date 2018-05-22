@@ -19,43 +19,63 @@
   <header class="here-gray container-fluid">
     <div class="row">
       <nav class="navbar navbar-expand-md navbar-dark fixed-top here-gray">
-        <figure class="figure mr-md-3 mt-3">
-          <img class="img-fluid" src="assets/images/logo2.png" alt="here-logo">
+        <figure class="figure mr-md-3 my-2">
+          <img id="logo" src="assets/images/logo2.png" alt="here-logo">
         </figure>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto navbar-ul">
-            <li class="nav-item">
+            <li class="nav-item pr-2">
               <a class="nav-link" href="#">About us</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item pr-2">
               <a class="nav-link" href="#">Vision</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item pr-2">
               <a class="nav-link" href="#">Partners</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Your Routes</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-md-0 mr-md-3">
-              <h5 class="text-white">The future of map making is HERE</h5>
+          <form class="form-inline my-2 my-md-0 mr-md-3 pt-1">
+              <h6 class="text-white">The future of map making is HERE</h6>
           </form>
         </div>
       </nav>
     </div>
   </header>
   <section class="container-fluid py-2 first-section">
-    <!-- MAPA -->
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-md-8">
         <div id="map">
         
         </div>
       </div>
+      <!-- seccion de fetching de places -->
+      <div class="col-md-4 second-section mt-5 py-5 bg-color">
+        <div class="row">
+          <div class="col-md-12">
+              <h5 class="text-center">Search for places near you</h5>
+              <form class="form-inline d-flex justify-content-center" id="search-form">
+                <div class="input-group">
+                  <input type="text" id="search-keyword" class="form-control" placeholder="search" aria-label="Search" aria-describedby="basic-addon1">
+                  <div class="input-group-prepend">
+                    <button class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></button>
+                  </div>
+                </div>
+              </form>
+          </div>
+          <div class="row" id="response-container">
+            
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+  <section class="container-fluid py-2 first-section">
     <!-- Fila de Titulo de cuadro -->
     <div class="row">
     <!-- <div class="col-12 col-sm-4 "> -->
@@ -69,7 +89,7 @@
     <!--Fila de Inputs  -->
     <div class="row">
       <div class="col-6 col-sm-4 position ml-4 bg-white">
-        <div class="input-group mb-3 pt-3">
+        <div class="input-group input-group-sm mb-3 pt-3">
           <div class="input-group-prepend">
             <span class="input-group-text bg-secondary" id="basic-addon1">
               <i class="fas fa-location-arrow"></i>
@@ -77,7 +97,7 @@
           </div>
           <input type="search" id="start-input" class="form-control" placeholder="your current location" aria-label="Username" aria-describedby="basic-addon1" disabled>
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group input-group-sm mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text bg-secondary" id="basic-addon1">
               <i class="fas fa-map-marker"></i>
@@ -98,28 +118,7 @@
       </div> -->
     </div>
   </section>
-  <!-- seccion de fetching de places -->
-  <section class="container-fluid second-section py-5 bg-color">
-    <div class="row ">
-      <div class="col-12">
-        <h5 class="text-center">Search for places near you</h5>
-        <form class="form-inline d-flex justify-content-center" id="search-form">
-          <div class="input-group">
-            <input type="text" id="search-keyword" class="form-control" placeholder="search" aria-label="Search" aria-describedby="basic-addon1">
-            <div class="input-group-prepend">
-              <button class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div id="response-container" class="row p-5 cards-container">
-        
-      </div>
-    </div>
-    <!-- <div class="row d-flex justify-content-center">
-      <div id="icon-container"><i class="fas fa-map-marker-alt fa-10x"></i></div> 
-    </div> -->
-  </section>
+  
   <footer class="here-gray fixed-bottom pt-3 footer">
     <p class="text-center text-white">© 2018 HERE TECH</p>
   </footer>
