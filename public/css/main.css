@@ -24,8 +24,8 @@ body {
 
 #map {
   background: var(--here-gray);
-  height: 92vh;
-  
+  height: 90vh;
+  width: 100%;
 }
 
 .here-aqua {
@@ -71,8 +71,13 @@ ul .nav-item .nav-link:hover {
   background-color: var(--here-aqua);
 }
 
-.cards-container .card:first-child {
+#response-container .card:first-child {
   display: none;
+}
+
+.inbox-row {
+  overflow-y:auto;
+  height: 60vh;
 }
 
 /* clases para TABLET  */
